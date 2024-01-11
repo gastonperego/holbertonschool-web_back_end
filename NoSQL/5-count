@@ -1,2 +1,2 @@
 // my comment
-db.school.countDocuments()
+school.countDocuments()
