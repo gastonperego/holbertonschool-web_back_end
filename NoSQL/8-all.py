@@ -7,7 +7,7 @@ import pymongo
 def list_all(mongo_collection):
     """ddddddd"""
     lis = []
-    for doc in mongo_collection:
+    for doc in mongo_collection.find():
         lis.append(doc)
     return lis
 
