@@ -6,9 +6,11 @@ import pymongo
 
 def list_all(mongo_collection):
     """ddddddd"""
-    client = pymongo.MongoClient()
-    return (client.mongo_collection.find())
-    
+    lis = []
+    for doc in mongo_collection:
+        lis.append(doc)
+    return lis
+
 if __name__ == '__main__':
     list_all(mongo_collection)
     
