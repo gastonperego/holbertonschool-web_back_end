@@ -3,6 +3,5 @@ export default function appendToEachArrayValue(array, appendString) {
   for (const value of array) {
       array2.push(`${appendString}${value}`);
     }
-  
-    return array2;
-  }
+  return array2;
+}
