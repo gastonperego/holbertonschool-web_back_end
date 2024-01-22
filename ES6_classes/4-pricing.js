@@ -1,57 +1,49 @@
-import Currency from "./3-currency.mjs";
+import Currency from './3-currency.mjs';
 
 export default class Pricing {
-    constructor(amount , currency) {
-        if (typeof(amount) == 'number') {
-            this._amount = amount
-        }
-        else {
-            throw TypeError('Amount must be a number')
-        }
-        if (typeof(currency) == 'object'){
-            this._currency = currency
-        }
-        else {
-            throw TypeError('Currency must be an object')
-        }
+  constructor(amount, currency) {
+    if (typeof (amount) == 'number') {
+      this._amount = amount;
+    } else {
+      throw new TypeError('Amount must be a number');
     }
 
-    get amount() {
-        return this._amount
+    if (currency instanceof Currency) {
+      this._currency = currency;
+    } else {
+      throw new TypeError('Currency must be a currency object');
     }
+  }
 
-    set amount(newamount) {
-        if (typeof(newamount) == 'number') {
-            this._amount = newamount
-        }
-        else {
-            throw TypeError('Amount must be a number')
-        } 
-    }
+  get amount() {
+    return this._amount;
+  }
 
-    get currency() {
-        return this._currency
+  set amount(newamount) {
+    if (typeof (newamount) == 'number') {
+      this._amount = newamount;
+    } else {
+      throw new TypeError('Amount must be a number');
     }
+  }
 
-    set currency(newcurrency) {
-        if (typeof(newcurrency) == 'object'){
-            this._currency = newcurrency
-        }
-        else {
-            throw TypeError('Currency must be an object')
-        }
-    }
-    
-    displayFullPrice() {
-        return `${this._amount} ${this.currency.name} (${this.currency.code})`
-    }
+  get currency() {
+    return this._currency;
+  }
 
-    static convertPrice(amount, conversion_rate) {
-        if (typeof(amount) == 'number' && typeof(conversion_rate) == 'number') {
-            return amount * conversion_rate
-        }
-        else {
-            throw TypeError('Both arguments must be numbers')
-        }
+  set currency(newcurrency) {
+    if (newcurrency instanceof Currency) {
+      this._currency = newcurrency;
+    } else {
+      throw new TypeError('Currency must be a currency object');
     }
+  }
+
+  displayFullPrice() {
+    return `${this._amount} ${this._currency.name} (${this._currency.code})`;
+  }
+
+  static convertPrice(amount, conversionRate) {
+    return amount * conversionRate;
+  }
 }
