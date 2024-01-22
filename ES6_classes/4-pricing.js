@@ -46,7 +46,7 @@ export default class Pricing {
         return `${this._amount} ${this.currency.name} (${this.currency.code})`
     }
 
-    convertPrice(amount, conversion_rate) {
+    static convertPrice(amount, conversion_rate) {
         if (typeof(amount) == 'number' && typeof(conversion_rate) == 'number') {
             return amount * conversion_rate
         }
