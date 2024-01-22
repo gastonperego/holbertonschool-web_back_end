@@ -2,7 +2,7 @@ import Currency from './3-currency.mjs';
 
 export default class Pricing {
   constructor(amount, currency) {
-    if (typeof (amount) == 'number') {
+    if (typeof (amount) === 'number') {
       this._amount = amount;
     } else {
       throw new TypeError('Amount must be a number');
@@ -20,7 +20,7 @@ export default class Pricing {
   }
 
   set amount(newamount) {
-    if (typeof (newamount) == 'number') {
+    if (typeof (newamount) === 'number') {
       this._amount = newamount;
     } else {
       throw new TypeError('Amount must be a number');
