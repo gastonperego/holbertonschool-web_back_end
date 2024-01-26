@@ -1,8 +1,6 @@
 import { createUser, uploadPhoto } from './utils';
 
 export default function handleProfileSignup() {
-  uploadPhoto()
-    .then((result) => { process.stdout.write(`${result.body} `); });
-  createUser()
-    .then((result) => { console.log(`${result.firstName} ${result.lastName}`); });
+  Promise.all([uploadPhoto(), createUser()])
+    .then((results) => { console.log(`${results[0].body} ${results[1].firstName} ${results[1].lastName}`); });
 }
