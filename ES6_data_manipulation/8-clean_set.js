@@ -1,5 +1,4 @@
-//export default 
-function cleanSet(set, startString) {
+export default function cleanSet(set, startString) {
   if (startString === undefined || startString === '' || typeof(startString) !== 'string') {
     return '';
   }
@@ -12,6 +11,3 @@ function cleanSet(set, startString) {
   string = string.slice(0, string.length - 1);
   return string;
 }
-
-console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), 'bon'));
-console.log(cleanSet(new Set(['bonjovi', 'bonaparte', 'bonappetit', 'banana']), ''));
