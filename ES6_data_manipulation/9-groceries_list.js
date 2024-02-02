@@ -1,5 +1,4 @@
-//export default 
-function groceriesList() {
+export default function groceriesList() {
     const groceriesList = new Map()
     groceriesList.set('Apples', 10);
     groceriesList.set('Tomatoes', 10);
@@ -8,5 +7,3 @@ function groceriesList() {
     groceriesList.set('Banana', 5);
     return groceriesList
 }
-
-console.log(groceriesList());
